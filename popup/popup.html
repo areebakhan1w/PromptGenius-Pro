@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+<div class="head">
+  <div class="logo">✦ PromptGenius Pro</div>
+  <div class="ver">v4.0</div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tabs">
+  <button class="tab on"  id="t0">🎯 Frameworks</button>
+  <button class="tab"     id="t1">🌐 Translate</button>
+  <button class="tab"     id="t2">✍️ AI Tools</button>
+  <button class="tab"     id="t3">📊 More</button>
+</div>
+
+<!-- ══ TAB 0: FRAMEWORKS ══ -->
+<div id="tab0" class="pg">
+  <input class="sbox" id="fw-search" placeholder="Search framework...">
+  <div class="fw-list" id="fw-list"></div>
+  <div id="fw-prev" class="result-box" style="display:none">
+    <div class="rlabel">Enhanced Prompt:</div>
+    <div class="rtext" id="fw-out"></div>
+    <button class="btn-purple" id="fw-copy">📋 Copy Prompt</button>
+  </div>
+</div>
+
+<!-- ══ TAB 1: TRANSLATE ══ -->
+<div id="tab1" class="pg" style="display:none">
+  <div class="rlabel">Text to translate:</div>
+  <textarea class="ta" id="tr-in" placeholder="Enter text here..."></textarea>
+  <div class="rlabel">Select Language:</div>
+  <input class="sbox" id="lang-search" placeholder="Search language...">
+  <div class="lang-grid" id="lang-grid"></div>
+  <button class="btn-green" id="tr-btn">🌐 Translate</button>
+  <div id="tr-result" class="result-box" style="display:none">
+    <div class="rlabel">Result:</div>
+    <div class="rtext" id="tr-out"></div>
+    <button class="btn-purple" id="tr-copy">📋 Copy</button>
+  </div>
+</div>
+
+<!-- ══ TAB 2: AI TOOLS ══ -->
+<div id="tab2" class="pg" style="display:none">
+
+  <!-- Tool selector -->
+  <div class="tool-grid">
+    <button class="tool-btn on" id="tool-para">✍️ Paraphrase</button>
+    <button class="tool-btn"   id="tool-gram">✅ Grammar Fix</button>
+    <button class="tool-btn"   id="tool-summ">📝 Summarize</button>
+    <button class="tool-btn"   id="tool-tone">🎭 Tone Convert</button>
+    <button class="tool-btn"   id="tool-exp"> 📖 Text Expand</button>
+  </div>
+
+  <!-- Paraphrase options -->
+  <div id="opts-para" class="opts-panel">
+    <div class="rlabel">Select Style:</div>
+    <div class="opt-row">
+      <button class="opt-btn on" data-val="simple">Simple</button>
+      <button class="opt-btn" data-val="professional">Professional</button>
+      <button class="opt-btn" data-val="short">Short</button>
+      <button class="opt-btn" data-val="creative">Creative</button>
+    </div>
+  </div>
+
+  <!-- Tone options -->
+  <div id="opts-tone" class="opts-panel" style="display:none">
+    <div class="rlabel">Select Tone:</div>
+    <div class="opt-row">
+      <button class="opt-btn on" data-val="formal">Formal</button>
+      <button class="opt-btn" data-val="friendly">Friendly</button>
+      <button class="opt-btn" data-val="professional">Professional</button>
+      <button class="opt-btn" data-val="marketing">Marketing</button>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="rlabel" style="margin-top:10px" id="ai-input-label">Text to paraphrase:</div>
+  <textarea class="ta" id="ai-in" placeholder="Enter your text here..."></textarea>
+
+  <!-- Gemini API key (first time) -->
+  <div id="api-key-section">
+    <div class="rlabel">Gemini API Key (first time only):</div>
+    <div style="display:flex;gap:6px;margin-bottom:10px">
+      <input class="sbox" id="api-key-input" placeholder="AIza..." style="flex:1;margin-bottom:0">
+      <button class="btn-green" id="save-key" style="width:auto;padding:0 14px;margin-bottom:0">Save</button>
+    </div>
+    <div style="font-size:10px;color:var(--color-text-tertiary);margin-bottom:8px">
+      Free key: <a href="https://aistudio.google.com" target="_blank" style="color:#1D9E75">aistudio.google.com</a>
+    </div>
+  </div>
+
+  <button class="btn-purple" id="ai-run">⚡ Run AI</button>
+
+  <div id="ai-result" class="result-box" style="display:none">
+    <div class="rlabel" id="ai-result-label">Result:</div>
+    <div class="rtext" id="ai-out"></div>
+    <button class="btn-green" id="ai-copy">📋 Copy Result</button>
+  </div>
+</div>
+
+<!-- ══ TAB 3: MORE (Word Counter + History + Templates) ══ -->
+<div id="tab3" class="pg" style="display:none">
+
+  <!-- Sub-tab bar -->
+  <div class="subtabs">
+    <button class="subtab on" id="st0">📊 Word Count</button>
+    <button class="subtab"    id="st1">🕑 History</button>
+    <button class="subtab"    id="st2">📄 Templates</button>
+  </div>
+
+  <!-- ── SUB-TAB 0: WORD COUNTER ── -->
+  <div id="stab0">
+    <div class="rlabel" style="margin-top:10px">Enter or paste your text:</div>
+    <textarea class="ta" id="wc-in" placeholder="Paste any text here to count words, characters, sentences..." style="min-height:100px"></textarea>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num" id="wc-words">0</div>
+        <div class="stat-label">Words</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="wc-chars">0</div>
+        <div class="stat-label">Characters</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="wc-chars-nsp">0</div>
+        <div class="stat-label">No Spaces</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="wc-sents">0</div>
+        <div class="stat-label">Sentences</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="wc-paras">0</div>
+        <div class="stat-label">Paragraphs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="wc-read">0m</div>
+        <div class="stat-label">Read Time</div>
+      </div>
+    </div>
+    <button class="btn-clear" id="wc-clear">🗑️ Clear Text</button>
+  </div>
+
+  <!-- ── SUB-TAB 1: HISTORY ── -->
+  <div id="stab1" style="display:none">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;margin-bottom:8px">
+      <div class="rlabel" style="margin:0">Last 10 applied prompts:</div>
+      <button class="btn-clear" id="hist-clear" style="width:auto;padding:4px 10px;font-size:10px;margin:0">🗑️ Clear All</button>
+    </div>
+    <div id="hist-list">
+      <div class="empty-msg">No history yet. Apply a framework to a prompt first!</div>
+    </div>
+  </div>
+
+  <!-- ── SUB-TAB 2: TEMPLATES ── -->
+  <div id="stab2" style="display:none">
+    <div class="rlabel" style="margin-top:10px">Quick-start prompt templates:</div>
+    <div id="tpl-list"></div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="popup.js"></script>
+</body>
+</html>
