@@ -2,10 +2,7 @@
 
 The ultimate Chrome Extension for AI power users. Supercharge your prompts on ChatGPT, Claude, Gemini, DeepSeek & Google — with 15+ frameworks, translation in 60+ languages, and 8 AI writing tools built right in.
 
-Show Image
-Show Image
-Show Image
-Show Image
+
 
 🚀 What is PromptGenius Pro?
 Most people using AI tools are leaving 80% of the value untapped — not because the AI is bad, but because weak prompts give weak results.
@@ -15,7 +12,9 @@ No login. No API key. No subscription. Just install and go.
 ✨ Features
 🎯 15+ Prompt Frameworks
 Auto-detect the best framework for your prompt, or choose manually:
-FrameworkBest ForRTF — Role, Task, FormatGeneral tasksRACE — Role, Action, Context, ExpectationProfessional tasksCRISPEComplex technical tasksTAG — Task, Action, GoalQuick focused requestsCARE — Context, Action, Result, ExampleProblem solvingCOAST — Context, Objective, Actions, Scenario, TaskCreative writingAIDA — Attention, Interest, Desire, ActionMarketing & persuasionBAB — Before, After, BridgeTransformation contentPAS — Problem, Agitate, SolutionPersuasive contentSCQA — Situation, Complication, Question, AnswerReports & analysisReAct — Reason + ActStep-by-step reasoningChain of Thought (CoT)Complex reasoningTree of Thought (ToT)Multi-path explorationZero-Shot PromptingDirect instructionsFew-Shot PromptingPattern-based tasks
+FrameworkBest ForRTF — Role, Task, FormatGeneral 
+tasksRACE — Role, Action, Context, ExpectationProfessional tasksCRISPEComplex technical tasksTAG — Task, Action, GoalQuick focused requestsCARE — Context, Action, Result, ExampleProblem solvingCOAST — Context, Objective, Actions, Scenario, TaskCreative writingAIDA — Attention, Interest, Desire, ActionMarketing & persuasionBAB — Before, After, BridgeTransformation contentPAS — Problem, Agitate, SolutionPersuasive contentSCQA — Situation, Complication, Question, AnswerReports & analysisReAct — Reason + ActStep-by-step reasoningChain of Thought (CoT)Complex reasoningTree of Thought (ToT)Multi-path explorationZero-Shot PromptingDirect instructionsFew-Shot PromptingPattern-based tasks
+
 🌐 Translate in 60+ Languages
 Translate any text instantly — right inside ChatGPT, Claude, or Gemini. Supports Urdu, Arabic, Hindi, Chinese, French, Spanish, and 55+ more.
 ✍️ AI Writing Tools
@@ -48,11 +47,7 @@ Framework Search — Find the right framework instantly
 🖥️ Supported Platforms
 PlatformStatusChatGPT (chatgpt.com)✅ Full supportClaude (claude.ai)✅ Full supportGemini (gemini.google.com)✅ Full supportDeepSeek (chat.deepseek.com)✅ Full supportGoogle Search✅ Full support
 
-📦 Installation
-From Chrome Web Store (Coming Soon)
-
-🔗 Chrome Web Store link will be added here
-
+📦 Installation=
 Manual Installation (Developer Mode)
 
 Download or clone this repository
